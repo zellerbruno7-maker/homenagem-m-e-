@@ -8,47 +8,58 @@
 
 body{
 margin:0;
-overflow:hidden;
 font-family:Arial;
-background:linear-gradient(#ffd6de,#fff);
 text-align:center;
+background:linear-gradient(#ffd6de,#fff);
+overflow:hidden;
 }
 
 h1{
 margin-top:120px;
-color:#d6336c;
+color:#c9184a;
+font-size:40px;
+}
+
+.sub{
+color:#555;
+margin-bottom:40px;
 }
 
 .heart{
-font-size:100px;
+font-size:90px;
 cursor:pointer;
-animation:beat 1s infinite;
+animation:beat 1.8s infinite;
 }
 
 @keyframes beat{
-0%{transform:scale(1);}
-50%{transform:scale(1.2);}
-100%{transform:scale(1);}
+0%{transform:scale(1)}
+50%{transform:scale(1.15)}
+100%{transform:scale(1)}
 }
 
 #content{
 display:none;
-margin-top:40px;
+animation:fade 2s;
+}
+
+@keyframes fade{
+from{opacity:0}
+to{opacity:1}
 }
 
 img{
-width:280px;
+width:300px;
 border-radius:20px;
-box-shadow:0 10px 20px rgba(0,0,0,0.2);
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
 .text{
-max-width:650px;
+max-width:700px;
 margin:auto;
-font-size:18px;
-line-height:1.6;
-margin-top:25px;
-padding:20px;
+font-size:19px;
+line-height:1.8;
+padding:30px;
+color:#333;
 }
 
 /* pétalas */
@@ -56,13 +67,14 @@ padding:20px;
 .petal{
 position:fixed;
 top:-10px;
-font-size:20px;
+font-size:22px;
 animation:fall linear infinite;
+opacity:0.8;
 }
 
 @keyframes fall{
 to{
-transform:translateY(100vh);
+transform:translateY(110vh);
 }
 }
 
@@ -73,8 +85,7 @@ transform:translateY(100vh);
 <body>
 
 <h1>Feliz Dia das Mães ❤️</h1>
-
-<p>Clique no coração</p>
+<p class="sub">Clique no coração</p>
 
 <div class="heart" onclick="abrir()">
 ❤️
@@ -87,27 +98,75 @@ transform:translateY(100vh);
 <div class="text">
 
 <p>
-Mãe, hoje no Dia das Mães eu queria te agradecer por tudo.
-Você sempre lutou muito por mim e pelas minhas irmãs.
-Mesmo com todas as dificuldades da vida, nunca deixou faltar amor,
-cuidado ou apoio.
+Mãe, hoje não é apenas mais um dia comum.
+Hoje é o Dia das Mães, e eu queria aproveitar esse momento
+para lembrar o quanto você é importante para mim
+e para toda a nossa família.
 </p>
 
 <p>
-Desde cedo você mostrou o que é ser uma mulher forte e guerreira.
-Você começou trabalhando com limpeza e, com muita dedicação,
-conseguiu crescer até se tornar gerente predial.
+Desde o começo da nossa história você sempre foi
+uma mulher extremamente forte.
+Você me teve em 2007, depois veio minha irmã em 2009
+e anos depois nossa irmãzinha em 2020.
+Mesmo com todas as dificuldades da vida,
+você nunca deixou faltar amor, cuidado ou dedicação.
 </p>
 
 <p>
-Eu tenho muito orgulho de você.
-Sou muito grato por cada conselho, cada esforço e cada sacrifício
-que você fez por nós.
+Você sempre trabalhou muito e sempre correu atrás
+de um futuro melhor para nós.
+Teve momentos difíceis, decisões difíceis,
+mas tudo que você fez foi pensando
+em dar uma vida melhor para seus filhos.
 </p>
 
 <p>
-Eu te amo muito.  
-Feliz Dia das Mães ❤️
+Eu sei que sua caminhada não foi fácil.
+Você começou trabalhando com serviços de limpeza,
+e com muita dedicação, esforço e estudo,
+conseguiu crescer profissionalmente
+até chegar ao cargo de gerente predial.
+Isso mostra o tamanho da sua força
+e da mulher incrível que você é.
+</p>
+
+<p>
+Mesmo com todos os desafios,
+você nunca desistiu da gente.
+Nunca deixou faltar amor,
+conselhos ou apoio.
+</p>
+
+<p>
+Hoje eu percebo o quanto cada conselho,
+cada puxão de orelha
+e cada sacrifício que você fez
+foram importantes para formar quem eu sou hoje.
+</p>
+
+<p>
+Às vezes na vida a gente acaba
+dando atenção para coisas ou pessoas
+que não mereciam vir antes da família.
+Mas quero que você saiba
+que eu tenho um orgulho imenso de você.
+</p>
+
+<p>
+Você é uma mãe incrível,
+uma mulher admirável
+e uma das pessoas mais importantes da minha vida.
+</p>
+
+<p>
+Obrigado por tudo que você fez
+e ainda faz por mim e pelas minhas irmãs.
+</p>
+
+<p>
+Eu te amo muito, mãe.
+Feliz Dia das Mães. ❤️
 </p>
 
 </div>
@@ -121,31 +180,31 @@ Feliz Dia das Mães ❤️
 function abrir(){
 
 document.getElementById("content").style.display="block"
-
 document.getElementById("musica").play()
 
 }
 
-/* pétalas caindo */
+/* pétalas mais lentas */
 
 function criarPetala(){
 
-const petal = document.createElement("div")
+const petal=document.createElement("div")
+
 petal.innerHTML="🌸"
 petal.classList.add("petal")
 
 petal.style.left=Math.random()*100+"vw"
-petal.style.animationDuration=3+Math.random()*5+"s"
+petal.style.animationDuration=10+Math.random()*10+"s"
 
 document.body.appendChild(petal)
 
 setTimeout(()=>{
 petal.remove()
-},8000)
+},20000)
 
 }
 
-setInterval(criarPetala,300)
+setInterval(criarPetala,900)
 
 </script>
 
