@@ -14,32 +14,28 @@ background:linear-gradient(#ffd6de,#fff);
 overflow:hidden;
 }
 
+/* título */
+
 h1{
 margin-top:120px;
 color:#c9184a;
-font-size:40px;
+font-size:42px;
 }
 
-.sub{
-color:#555;
-margin-bottom:40px;
-}
+/* coração gigante */
 
 .heart{
-font-size:90px;
+font-size:230px;
 cursor:pointer;
-animation:beat 1.8s infinite;
+margin-top:40px;
 }
 
-@keyframes beat{
-0%{transform:scale(1)}
-50%{transform:scale(1.15)}
-100%{transform:scale(1)}
-}
+/* conteúdo escondido */
 
 #content{
 display:none;
 animation:fade 2s;
+margin-top:40px;
 }
 
 @keyframes fade{
@@ -47,14 +43,18 @@ from{opacity:0}
 to{opacity:1}
 }
 
+/* foto */
+
 img{
-width:300px;
+width:320px;
 border-radius:20px;
 box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
+/* texto */
+
 .text{
-max-width:700px;
+max-width:720px;
 margin:auto;
 font-size:19px;
 line-height:1.8;
@@ -68,8 +68,8 @@ color:#333;
 position:fixed;
 top:-10px;
 font-size:22px;
-animation:fall linear infinite;
 opacity:0.8;
+animation:fall linear infinite;
 }
 
 @keyframes fall{
@@ -85,7 +85,8 @@ transform:translateY(110vh);
 <body>
 
 <h1>Feliz Dia das Mães ❤️</h1>
-<p class="sub">Clique no coração</p>
+
+<p>Clique no coração</p>
 
 <div class="heart" onclick="abrir()">
 ❤️
@@ -100,57 +101,53 @@ transform:translateY(110vh);
 <p>
 Mãe, hoje não é apenas mais um dia comum.
 Hoje é o Dia das Mães, e eu queria aproveitar esse momento
-para lembrar o quanto você é importante para mim
-e para toda a nossa família.
+para te agradecer por tudo que você fez por mim e pelas minhas irmãs.
 </p>
 
 <p>
-Desde o começo da nossa história você sempre foi
-uma mulher extremamente forte.
-Você me teve em 2007, depois veio minha irmã em 2009
+Você me teve em 2007, depois veio minha irmã em 2009,
 e anos depois nossa irmãzinha em 2020.
+Desde o começo você sempre lutou muito
+para dar uma vida melhor para nós.
+</p>
+
+<p>
 Mesmo com todas as dificuldades da vida,
 você nunca deixou faltar amor, cuidado ou dedicação.
+Você sempre foi uma mulher forte,
+determinada e extremamente guerreira.
 </p>
 
 <p>
-Você sempre trabalhou muito e sempre correu atrás
-de um futuro melhor para nós.
-Teve momentos difíceis, decisões difíceis,
-mas tudo que você fez foi pensando
-em dar uma vida melhor para seus filhos.
-</p>
-
-<p>
-Eu sei que sua caminhada não foi fácil.
-Você começou trabalhando com serviços de limpeza,
-e com muita dedicação, esforço e estudo,
+Sua trajetória é algo que me inspira muito.
+Você começou trabalhando com limpeza em empresa
+e com muito esforço, estudo e dedicação
 conseguiu crescer profissionalmente
 até chegar ao cargo de gerente predial.
+</p>
+
+<p>
 Isso mostra o tamanho da sua força
-e da mulher incrível que você é.
+e o exemplo de mulher que você é.
 </p>
 
 <p>
-Mesmo com todos os desafios,
-você nunca desistiu da gente.
-Nunca deixou faltar amor,
-conselhos ou apoio.
+Mesmo quando precisou tomar decisões difíceis,
+como focar nos estudos para construir um futuro melhor,
+você nunca deixou de pensar na gente
+e nunca deixou faltar nada.
 </p>
 
 <p>
-Hoje eu percebo o quanto cada conselho,
-cada puxão de orelha
-e cada sacrifício que você fez
-foram importantes para formar quem eu sou hoje.
+Hoje eu entendo muito mais tudo que você fez.
+Cada conselho, cada puxão de orelha,
+cada sacrifício que você fez por nós
+foram fundamentais para formar quem eu sou hoje.
 </p>
 
 <p>
-Às vezes na vida a gente acaba
-dando atenção para coisas ou pessoas
-que não mereciam vir antes da família.
-Mas quero que você saiba
-que eu tenho um orgulho imenso de você.
+Eu tenho muito orgulho de você.
+De verdade.
 </p>
 
 <p>
@@ -161,7 +158,7 @@ e uma das pessoas mais importantes da minha vida.
 
 <p>
 Obrigado por tudo que você fez
-e ainda faz por mim e pelas minhas irmãs.
+e continua fazendo por mim e pelas minhas irmãs.
 </p>
 
 <p>
@@ -184,7 +181,7 @@ document.getElementById("musica").play()
 
 }
 
-/* pétalas mais lentas */
+/* pétalas bem suaves */
 
 function criarPetala(){
 
@@ -194,17 +191,17 @@ petal.innerHTML="🌸"
 petal.classList.add("petal")
 
 petal.style.left=Math.random()*100+"vw"
-petal.style.animationDuration=10+Math.random()*10+"s"
+petal.style.animationDuration=12+Math.random()*10+"s"
 
 document.body.appendChild(petal)
 
 setTimeout(()=>{
 petal.remove()
-},20000)
+},22000)
 
 }
 
-setInterval(criarPetala,900)
+setInterval(criarPetala,1500)
 
 </script>
 
